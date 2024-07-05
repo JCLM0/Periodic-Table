@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    /* Colores */
+    --black: #000;
+    --white: #fff;
+    --light-gray: #F3F6F8;
+    --gray: #DDDDDD;
+    --bg-color: #3a4552;
+    --alcaline-metal-color: #e95e1e;
+    --alcalineTerrain-color: #f79d27;
+    --lantanidos-color: #22be9a;
+    --actinide-color: #38aa5e;
+    --transition-metals-color: #5aee16;
+    --metals-color: #e4c84d;
+    --semi-metals-color: #eb644d;
+    --non-metals-color: #5d8fda;
+    --noble-gases-color: #d413db;
+
+    --solid-color: #061113;
+    --liquid-color: #200c68;
+    --gas-color: #52091f;
+    --unknown-color: #525558;
+
+    /* Fonts */
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+
+    /* Tamaños */
+    --xs: 0.8rem;
+    --sm: 1rem;
+    --md: 1.5rem;
+    --lg: 2rem;
+    --xl: 3rem;
+    --xxl: 5rem;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: var(--primary-font);
+    width: 100%;
+    height: 100vh;
+    min-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alcaline-metals {
+    background-color: var(--alcaline-metal-color);
+}
+
+.alcaline-terrains {
+    background-color: var(--alcalineTerrain-color);
+}
+
+.lantinides {
+    background-color: var(--lantanidos-color);
+}
+
+.actinides {
+    background-color: var(--actinide-color);
+}
+
+.transition-metals {
+    background-color: var(--transition-metals-color);
+}
+
+.metals {
+    background-color: var(--metals-color);
+}
+
+.semi-metals {
+    background-color: var(--semi-metals-color);
+}
+
+.non-metals {
+    background-color: var(--non-metals-color);
+}
+
+.noble-gases {
+    background-color: var(--noble-gases-color);
+}
+
+.other-elements {
+    background-color: var(--gray);
+}
+
+header {
+    width: 100%;
+    min-width: 768px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--md);
+    padding: 0 20px;
+}
+
+
+main {
+    width: 100%;
+    min-width: 768px;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 75px 32px;
+}
+
+/* ELEMENT INFORMATION */
+.element-information {
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 4fr;
+    gap: 24px;
+    justify-items: center;
+    align-items: center;
+}
+
+.element-information .element-information__element-view {
+    width: 190px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.element-information__element-view p:nth-child(1) {
+    font-size: var(--xl);
+    font-weight: 700;
+}
+
+.element-information__element-view p:nth-child(2) {
+    font-size: var(--xxl);
+    font-weight: 700;
+    margin-top: -12px;
+}
+
+.element-information__element-view p:nth-child(3) {
+    font-size: var(--lg);
+    font-weight: 400;
+}
+
+.element-information__element-view p:nth-child(4) {
+    font-size: var(--lg);
+    font-weight: 400;
+}
+
+.elements-data {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1px;
+}
+
+.elements-data article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--gray);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+
+
+/* PERIODIC TABLE */
+
+.periodic-table {
+    width: 100%;
+    height: 100%;
+    min-width: 140px;
+    display: grid;
+    grid-template-columns: 30px repeat(18, 1fr);
+    grid-template-rows: 40px repeat(7, 1fr) 20px 1fr 1fr;
+    gap: 2px;
+    background-color: var(--white);
+    padding: 16px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+
+.periodic-table_group-numbers {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 30px repeat(18, 1fr);
+    grid-row: 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: var(--md);
+    color: var(--black);
+}
+
+.periodic-table_period-numbers {
+    grid-column: 1 / 2;
+    grid-row: 2 / 9;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-size: var(--md);
+    color: var(--black);
+}
+
+
+.periodic-table_white-space {
+    grid-column: 3 / -2;
+    grid-row: 2 / 3;
+}
+
+
+.periodic-table_elements-ticket {
+    grid-column: 4 / 5;
+    grid-row: 7 / 12;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 20px 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: var(--md);
+    color: var(--black);
+    background: #4bf4fa;
+    border-radius: 4px;
+    border: 1px solid #0e595c;
+}
+
+
+.periodic-table_lantanides-elements {
+    grid-column: 5 / -1;
+    grid-row: 10 / 11;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: var(--md);
+    color: var(--black);
+    gap: 2px;
+}
+
+.periodic-table_actinides-elements {
+    grid-column: 5 / -1;
+    grid-row: 11 / 12;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: var(--md);
+    color: var(--black);
+    gap: 2px;
+}
+
+
+.periodic-table_element {
+    width: 100%;
+    max-width: 60px;
+    height: 100%;
+    max-height: 60px;
+    font-size: var(--sm);
+    border-radius: 4px;
+    padding: 4px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: start;
+    align-items: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.periodic-table_element p:nth-child(1) {
+    font-size: var(--sm);
+    font-weight: 500;
+    margin-top: -12px;
+    margin-bottom: -18px;
+}
+
+.periodic-table_element p:nth-child(2) {
+    font-size: var(--md);
+    font-weight: 700;
+}
+
+.periodic-table_element p:nth-child(3) {
+    font-size: var(--sm);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 50px;
+    min-width: 10px;
+}
+
+.periodic-table_element p:nth-child(4) {
+    margin-bottom: -4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 50px;
+    min-width: 10px;
+}
+
+
+.periodic-table_state-elements {
+    grid-column: 4 / 8;
+    grid-row: 2 / 5;
+    margin: 16px 36px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--lg);
+}
+
+.periodic-table_state-elements div {
+    padding: 0px 24px;
+    border-radius: 4px;
+    margin-right: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.periodic-table_quimic-series {
+    grid-column: 8 / 14;
+    grid-row: 2 / 5;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr 2fr 2fr;
+    width: 100%;
+    height: 100%;
+    margin-left: -20px;
+    padding: 8px;
+    gap: 2px;
+}
+
+.periodic-table_quimic-series div {
+    border: 1px solid var(--black);
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.periodic-table_quimic-series div:nth-child(1) { /* Metal */
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+}
+
+.periodic-table_quimic-series div:nth-child(2) { /* No Metal */
+    grid-column: 9 / 11;
+    grid-row: 1 / 2;
+}
+
+.periodic-table_quimic-series div:nth-child(3) { /* Alcalino */
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(4) { /* AlcalinoTerreos */
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(5) { /* Lantanidos */
+    grid-column: 3 / 6;
+    grid-row: 2 / 3;
+}
+
+.periodic-table_quimic-series div:nth-child(6) { /* Actinidos */
+    grid-column: 3 / 6;
+    grid-row: 3 / 4;
+}
+
+.periodic-table_quimic-series div:nth-child(7) { /* Metal de Transicion */
+    grid-column: 6 / 7;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(8) { /* Metales */
+    grid-column: 7 / 8;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(9) { /* Semi-Metales */
+    grid-column: 8 / 9;
+    grid-row: 1 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(10) { /* Otros No Metales */
+    grid-column: 9 / 10;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+.periodic-table_quimic-series div:nth-child(11) { /* Gases Nobles */
+    grid-column: 10 / 11;
+    grid-row: 2 / 4;
+    writing-mode: vertical-lr;
+}
+
+
+.periodic-table_element-info {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.transition-bg {
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
+}
+
+.state-Solid {
+    background-color: var(--solid-color);
+    color: var(--white);
+    border: 1px solid var(--solid-color);
+}
+
+.state-Liquid {
+    background-color: var(--liquid-color);
+    color: var(--white);
+    border: 1px solid var(--liquid-color);
+}
+
+.state-Gas {
+    background-color: var(--gas-color);
+    color: var(--white);
+    border: 1px solid var(--gas-color);
+}
+
+.state-Unknown {
+    background-color: var(--unknown-color);
+    color: var(--white);
+    border: 1px solid var(--unknown-color);
+}
+
+.blank-color {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+}
